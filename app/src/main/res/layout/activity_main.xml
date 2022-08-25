@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       android:orientation="vertical"
+        android:gravity="center"
+        android:layout_centerInParent="true">
+        <TextView
+            android:id="@+id/question1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="50 + 17 "
+            android:gravity="center"
+            android:textColor="#F8DA3A"
+            android:textSize="50dp"
+            android:fontFamily="sans-serif-black"
+        />
+        <TextView
+            android:id="@+id/question2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="= 69 "
+            android:textColor="#F8DA3A"
+            android:textSize="50dp"
+            android:fontFamily="sans-serif-black"
+
+            />
+    </LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="20dp"
+    >
+    <TextView
+        android:id="@+id/timecounter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="24sp"
+        android:text="@string/time_04"
+        android:textColor="#DAD1A1"
+        android:fontFamily="monospace"
+        />
+    <TextView
+        android:id="@+id/scorecounter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="24sp"
+        android:text="@string/score_100"
+        android:textColor="#F6EBAF"
+        android:fontFamily="monospace"
+        android:paddingStart="40dp"
+        android:paddingLeft="5dp"
+        tools:ignore="RtlSymmetry" />
+</LinearLayout>//toptext
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    >
+
+
+    <ImageButton
+        android:id="@+id/checkbtn1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight= "1"
+        android:src="@drawable/ic_baseline_check_black_36"
+        app:backgroundTint = "#FFD600"
+        android:fadingEdge="vertical"
+        android:contentDescription="CORRECT" />
+
+    <ImageButton
+        android:id="@+id/closebtn1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:src="@drawable/ic_baseline_close_black_36"
+        app:backgroundTint="#EACB28"
+        android:fadingEdge="vertical"
+        android:contentDescription="WRONG"
+        />
+
+       </LinearLayout>//buttons
+</RelativeLayout>

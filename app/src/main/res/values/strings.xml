@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Quick Maths</string>
+    <string name="score">SCORE:</string>
+    <string name="time_04">TIME: 04</string>
+    <string name="score_100">SCORE: 100</string>
+</resources>
