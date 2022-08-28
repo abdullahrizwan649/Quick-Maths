@@ -3,4 +3,6 @@
     <string name="score">SCORE:</string>
     <string name="time_04">TIME: 04</string>
     <string name="score_100">SCORE: 100</string>
+    <string name="answer">ANSWER</string>
+    <string name="score_text">SCORE: </string>
 </resources>

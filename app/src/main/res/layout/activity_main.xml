@@ -12,55 +12,119 @@
        android:orientation="vertical"
         android:gravity="center"
         android:layout_centerInParent="true">
-        <TextView
-            android:id="@+id/question1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="50 + 17 "
-            android:gravity="center"
-            android:textColor="#F8DA3A"
-            android:textSize="50dp"
-            android:fontFamily="sans-serif-black"
-        />
-        <TextView
-            android:id="@+id/question2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="= 69 "
-            android:textColor="#F8DA3A"
-            android:textSize="50dp"
-            android:fontFamily="sans-serif-black"
 
-            />
-    </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/gen_num_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="111"
+                android:textColor="@color/yellow"
+                android:textSize="50sp"
+                android:fontFamily="sans-serif-black">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/addition_sign"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:text=" + "
+                android:textColor="@color/yellow"
+                android:textSize="50sp"
+               android:paddingLeft="10dp"
+                >
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/gen_num_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="111 "
+                android:textColor="@color/yellow"
+                android:textSize="50sp"
+                android:fontFamily="sans-serif-black">
+
+            </TextView>
+        </LinearLayout>
+
+
 <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:paddingTop="20dp"
+    android:layout_height="match_parent"
+    android:gravity="center"
     >
     <TextView
-        android:id="@+id/timecounter"
-        android:layout_width="0dp"
+        android:id="@+id/equals"
+        android:layout_width="40dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:textSize="24sp"
-        android:text="@string/time_04"
-        android:textColor="#DAD1A1"
-        android:fontFamily="monospace"
-        />
-    <TextView
-        android:id="@+id/scorecounter"
-        android:layout_width="0dp"
+        android:layout_gravity="center"
+        android:text="="
+        android:textSize="50sp"
+        android:inputType="number"
+        android:ems="4"
+        android:textColor="@color/yellow"
+        android:backgroundTint="@color/yellow"
+        android:textColorHint="@color/yellow"
+        android:fontFamily="sans-serif-condensed-medium"
+        >
+
+    </TextView>
+    <EditText
+            android:id="@+id/input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="50sp"
+            android:inputType="number"
+            android:ems="4"
+            android:textColor="@color/yellow"
+            android:backgroundTint="@color/yellow"
+            android:textColorHint="@color/yellow"
+            android:fontFamily="sans-serif-condensed-medium"
+            >
+
+        </EditText>
+</LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:textSize="24sp"
-        android:text="@string/score_100"
-        android:textColor="#F6EBAF"
-        android:fontFamily="monospace"
-        android:paddingStart="40dp"
-        android:paddingLeft="5dp"
-        tools:ignore="RtlSymmetry" />
-</LinearLayout>//toptext
+        android:gravity="center"
+        android:paddingTop="20dp"
+        >
+
+        <TextView
+            android:id="@+id/score_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:text="SCORE: "
+            android:textColor="#F1DB5B"
+            android:textSize="36sp"
+            android:textStyle="bold"
+             />
+        <TextView
+            android:id="@+id/score_counter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:text="000 "
+            android:textColor="#F1DB5B"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
 
 <LinearLayout
     android:layout_width="match_parent"
@@ -71,24 +135,24 @@
 
     <ImageButton
         android:id="@+id/checkbtn1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight= "1"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
         android:src="@drawable/ic_baseline_check_black_36"
         app:backgroundTint = "#FFD600"
         android:fadingEdge="vertical"
-        android:contentDescription="CORRECT" />
+        android:contentDescription="CORRECT"
+        android:onClick="check"/>
 
-    <ImageButton
-        android:id="@+id/closebtn1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:src="@drawable/ic_baseline_close_black_36"
-        app:backgroundTint="#EACB28"
-        android:fadingEdge="vertical"
-        android:contentDescription="WRONG"
-        />
+<!--    <ImageButton-->
+<!--        android:id="@+id/closebtn1"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_weight="1"-->
+<!--        android:src="@drawable/ic_baseline_close_black_36"-->
+<!--        app:backgroundTint="#EACB28"-->
+<!--        android:fadingEdge="vertical"-->
+<!--        android:contentDescription="WRONG"-->
+<!--        />-->
 
        </LinearLayout>//buttons
 </RelativeLayout>

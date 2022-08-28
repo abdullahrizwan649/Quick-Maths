@@ -26,17 +26,40 @@
                 android:textColor="@color/white"
                 android:textSize="40sp" />
 
-            <TextView
-                android:id="@+id/scorecounter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:fontFamily="sans-serif-black"
-                android:text="@string/score_100"
-                android:textColor="#F8DA3A"
-                android:textSize="30sp" />
 
-                    <LinearLayout
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_marginLeft="25dp">
+
+                <TextView
+                    android:id="@+id/score_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:fontFamily="sans-serif-black"
+                    android:text="SCORE: "
+                    android:textColor="@color/yellow"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:id="@+id/score_counter"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-black"
+                    android:text="000 "
+                    android:textColor="@color/yellow"
+                    android:textSize="36sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
