@@ -65,7 +65,7 @@ ImageButton checkbtn1;
                         // Toast.makeText(MainActivity.this, "prntcntr "+counter, Toast.LENGTH_SHORT).show();
 
                         counter++;
-                        Toast.makeText(MainActivity.this, "prntcntr "+counter, Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(MainActivity.this, "prntcntr "+counter, Toast.LENGTH_SHORT).show();
 
                         if(counter==questions)
                         {   counter = 0;
@@ -110,8 +110,8 @@ ImageButton checkbtn1;
 
         public void set_randomNumbers()
         {
-           random_1 = (int) (Math.random()*49);
-           random_2 = (int) (Math.random()*49);
+           random_1 = (int) (Math.random()*499);
+           random_2 = (int) (Math.random()*499);
            number_1.setText(String.valueOf(random_1));
            number_2.setText(String.valueOf(random_2));
             Log.d("rd1", "set_randomNumbers: "+random_1);

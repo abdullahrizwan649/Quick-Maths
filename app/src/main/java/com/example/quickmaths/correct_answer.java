@@ -39,7 +39,7 @@ public class correct_answer extends AppCompatActivity {
             refreshbtn = findViewById(R.id.refreshbtn);
             refreshbtn.setOnClickListener(view -> {
             Intent intent;
-            intent = new Intent(correct_answer.this, MainActivity.class);
+            intent = new Intent(correct_answer.this, StartPage.class);
             startActivity(intent);
         });
 
