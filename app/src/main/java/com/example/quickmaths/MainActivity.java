@@ -1,16 +1,15 @@
 package com.example.quickmaths;
 
-import static android.content.ContentValues.TAG;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 
 
-import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -24,6 +23,9 @@ public class MainActivity extends AppCompatActivity {
     int answer;
     boolean check;
     int score;
+    int sum;
+    static int counter = 0;
+
 
 EditText input;
 TextView number_1;
@@ -31,12 +33,13 @@ TextView number_2;
 TextView score_counter;
 ImageButton checkbtn1;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-       checkbtn1 = findViewById(R.id.checkbtn1);
+        checkbtn1 = findViewById(R.id.checkbtn1);
         input = findViewById(R.id.input);
         number_1 = findViewById(R.id.gen_num_1);
         number_2 = findViewById(R.id.gen_num_2);
@@ -45,15 +48,41 @@ ImageButton checkbtn1;
         Objects.requireNonNull(getSupportActionBar()).hide();
 
         set_randomNumbers();
-        number_1.setText(String.valueOf(random_1));
-        number_2.setText(String.valueOf(random_2));
+
+        Intent mIntent = getIntent();
+        int questions = mIntent.getIntExtra("questions",1000);
 
         checkbtn1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                run();
-              //  check();
-                Toast.makeText(MainActivity.this, "answer"+answer+"score"+ score , Toast.LENGTH_SHORT).show();
+            public void onClick(View view)
+            {
+                    String input_txt = input.getText().toString().trim();
+                    if(!input_txt.isEmpty())
+                    {
+                        run();
+                        input.getText().clear();
+                        set_randomNumbers();
+                        // Toast.makeText(MainActivity.this, "prntcntr "+counter, Toast.LENGTH_SHORT).show();
+
+                        counter++;
+                        Toast.makeText(MainActivity.this, "prntcntr "+counter, Toast.LENGTH_SHORT).show();
+
+                        if(counter==questions)
+                        {   counter = 0;
+                            Intent intent;
+                            intent = new Intent(MainActivity.this, correct_answer.class);
+                            intent.putExtra("score_intent", score);
+                            startActivity(intent);
+
+                          //  Toast.makeText(MainActivity.this, "prntcntr "+counter, Toast.LENGTH_SHORT).show();
+
+                        }
+
+//                    Toast.makeText(MainActivity.this, "answer" + answer + "sum" +sum, Toast.LENGTH_SHORT).show();
+                   }else {
+                        Toast.makeText(MainActivity.this, "ENTER VALUE! STEWPID", Toast.LENGTH_SHORT).show();
+
+                    }
             }
         });
 
@@ -61,44 +90,35 @@ ImageButton checkbtn1;
     }
 
     public void run() {
-        for (int i = 0; i < 5; i++) {
+
 
             answer = Integer.parseInt(input.getText().toString());
-            check();
 
-            if (check == true) {
-                score = 10;
-            } else {
-                score +=0;
+            sum = random_1 + random_2;
+
+
+        if (answer == sum) check = true;
+        else check = false;
+
+            if (check == true)
+            {
+                score += 10;
             }
             score_counter.setText(String.valueOf(score));
-        }
     }
 
 
-    public void set_randomNumbers()
+        public void set_randomNumbers()
         {
            random_1 = (int) (Math.random()*49);
            random_2 = (int) (Math.random()*49);
+           number_1.setText(String.valueOf(random_1));
+           number_2.setText(String.valueOf(random_2));
             Log.d("rd1", "set_randomNumbers: "+random_1);
             Log.d("rd2", "set_randomNumbers: "+random_2);
         }
 
 
-        public void check()
-        {
-            int sum = random_1+random_2;
-
-            if (answer == sum){
-
-                check = true;
-                score += 10;
-            }
-            else{
-            check = false;
-            }
-            score_counter.setText(String.valueOf(score));
-        }
 
 
 

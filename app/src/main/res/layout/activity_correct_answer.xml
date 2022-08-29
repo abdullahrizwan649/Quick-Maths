@@ -24,38 +24,38 @@
                 android:fontFamily="sans-serif-black"
                 android:text="JUST MATHS"
                 android:textColor="@color/white"
-                android:textSize="40sp" />
+                android:textSize="60sp"
+                />
 
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
-                android:layout_gravity="center"
-                android:layout_marginLeft="25dp">
+                android:layout_gravity="center">
 
                 <TextView
                     android:id="@+id/score_text"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:layout_gravity="center"
                     android:fontFamily="sans-serif-black"
-                    android:text="SCORE: "
+                    android:text="SCORE:  "
                     android:textColor="@color/yellow"
-                    android:textSize="30sp" />
+                    android:textSize="50sp"
+                    android:layout_marginSta9rt="50dp"
+                    android:layout_marginLeft="50dp" />
 
                 <TextView
                     android:id="@+id/score_counter"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_weight="1"
                     android:fontFamily="sans-serif-black"
-                    android:text="000 "
+                    android:text=" 000 "
                     android:textColor="@color/yellow"
-                    android:textSize="36sp"
-                    android:textStyle="bold" />
+                    android:textSize="50sp"
+                    />
             </LinearLayout>
 
 
@@ -76,7 +76,7 @@
                         />
 
                     <ImageButton
-                    android:id="@+id/sharebtn"
+                    android:id="@+id/share_btn"
                     android:layout_width="120dp"
                     android:layout_height="120dp"
                     android:layout_weight="1"

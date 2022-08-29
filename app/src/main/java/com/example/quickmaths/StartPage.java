@@ -3,16 +3,15 @@
     import androidx.appcompat.app.AppCompatActivity;
 
     import android.content.Intent;
-    import android.os.Build;
     import android.os.Bundle;
     import android.view.View;
-    import android.view.WindowManager;
-    import android.widget.ImageButton;
+    import android.widget.Button;
 
     import java.util.Objects;
 
     public class StartPage extends AppCompatActivity {
 
+int questions;
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -25,17 +24,41 @@
 
 
 
-            ImageButton startbtn = (ImageButton) findViewById(R.id.startbtn);
-
-            startbtn.setOnClickListener(new View.OnClickListener() {
+            Button five_q = (Button) findViewById(R.id.five_q);
+            five_q.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Intent intent;
                     intent = new Intent(StartPage.this, MainActivity.class);
+                    questions = 5;
+                    intent.putExtra("questions", questions);
                     startActivity(intent);
                 }
+            });
 
 
+            Button ten_q = (Button) findViewById(R.id.ten_q);
+            ten_q.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent;
+                    intent = new Intent(StartPage.this, MainActivity.class);
+                    questions = 10;
+                    intent.putExtra("questions", questions);
+                    startActivity(intent);
+                }
+            });
+
+            Button twenty_q = (Button) findViewById(R.id.twenty_q);
+            twenty_q.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent;
+                    intent = new Intent(StartPage.this, MainActivity.class);
+                    questions = 20;
+                    intent.putExtra("questions", questions);
+                    startActivity(intent);
+                }
             });
 
 
