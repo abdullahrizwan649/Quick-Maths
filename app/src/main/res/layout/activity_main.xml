@@ -141,7 +141,7 @@
         app:backgroundTint = "#FFD600"
         android:fadingEdge="vertical"
         android:contentDescription="CORRECT"
-        android:onClick="check"/>
+    />
 
 <!--    <ImageButton-->
 <!--        android:id="@+id/closebtn1"-->
